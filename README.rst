@@ -13,6 +13,58 @@ DELAUNAYSPARSE, SLATEC, LAPACK, and BLAS are also provided. Comments at
 the top of each subroutine document their usage, and examples demonstrating
 the driver's usage are given in ``src/sample.f90``.
 
+A Python interface for VTMOP is also available through libEnsemble:
+    https://github.com/Libensemble/libe-community-examples
+
+-------------
+Usage Summary
+-------------
+
+VTMOP features two distinctly different user-interfaces, with varying
+levels of flexibility.
+
+The first and simplest user-interface is the driver subroutine
+``VTMOP_SOLVE``, which is included in the module ``VTMOP_LIB``.
+``VTMOP_SOLVE`` accepts problem dimensions, simple bound constraints, an
+objective function, some (optional) parameter settings, and (optionally) any
+user-defined surrogate models and optimization routines. The default setting
+is to perform an adaptive search using the VTDIRECT95 software package,
+fit LSHEP surrogate models, and optimize the surrogate models using direct
+search with the polling strategy generalized pattern search (GPS).
+
+In order to use ``VTMOP_SOLVE``, the blackbox multiobjective cost function
+must be available as a Fortran 2008 subroutine. For information on how to
+achieve this, including cases where F is an ISO C/C++ function and when
+F is a command line executable, see ``src/OBJ_FUNC_README``. Additional
+information on ``VTMOP_SOLVE`` is provided in the comments around each
+subroutine definition, in the file ``vtmop.f90``.
+
+The second interface is the return-to-caller interface, which allows
+advanced users to perform function evaluations in batches, in an independent
+environment. The return-to-caller interface is contained in the module
+``VTMOP_MOD``, and contains four driver subroutines (below). Additional
+information on these subroutines is provided in the code documentation, in
+the file ``vtmop.f90``.
+
+ - ``VTMOP_INIT`` initializes an instance of the data type ``VTMOP_TYPE`` for
+   passing data between subroutines.
+ - ``VTMOP_LTR`` identifies the most isolated point on the Pareto front,
+   constructs a local trust region (LTR) about that point, and returns
+   a region of the design for the user to explore independently.
+ - ``VTMOP_OPT`` fits several surrogate models to the current dataset, and uses
+   these models to propose a set of candidate points in the LTR, for evaluation
+   by the user.
+ - ``VTMOP_FINALIZE`` post processes the dataset gathered throughout the
+   iterations of the algorithm, returns the nondominated and efficient point
+   sets, and frees all internal memory.
+
+VTMOP also includes a checkpointing system, a detailed error handling
+system, and maintains a database of all function evaluations ever taken,
+which can be retrieved using optional output arrays.
+
+For more detailed information on usage, see the corresponding sections in
+the ``src/USERS`` file.
+
 ------------------------------
 Source Code and Package Layout
 ------------------------------
@@ -108,15 +160,29 @@ whether it supports
  - passing internal procedures as actual arguments
  - usage of the ``IEEE_ARITHMETIC`` intrinsic module.
 
-.. include:: ./src/USERS.rst
+-----------------------------------
+Citations and Additional References
+-----------------------------------
+
+If you use VTMOP as part of a published work, please cite the following
+publication:
+
+.. code-block:: bibtex
+
+    @misc{chang2022algorithm,
+      author={Chang, Tyler H. and Watson, Layne T. and Larson, Jeffrey and Thacker, William I. and Deshpande, Shubhangi and Lux, Thomas C. H.},
+      title={Algorithm {XXXX}: {VTMOP}: {S}olver for blackbox multiobjective optimization problems},
+      note = {To appear in ACM Transactions on Mathematical Software,
+      \url{https://doi.org/10.1145/3529258}}
+    }
 
 -------------------------
 Contacts and Contributors
 -------------------------
 
 For further inquiries, contact
- - Tyler Chang, tchang@anl.gov or
- - Layne Watson, ltw@cs.vt.edu
+ - Tyler Chang, ``tchang@anl.gov`` or
+ - Layne Watson, ``ltw@cs.vt.edu``
 
 For a full list of contributors, including contributions to the
 source code, theoretical contributions, and proof-reading/writing
