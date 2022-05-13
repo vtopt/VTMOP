@@ -108,9 +108,9 @@ whether it supports
  - passing internal procedures as actual arguments
  - usage of the ``IEEE_ARITHMETIC`` intrinsic module.
 
-.. include:: src/USERS
+.. include:: ./src/USERS
 
-.. include:: src/OBJ_FUNC_README
+.. include:: ./src/OBJ_FUNC_README
 
 -------------------------
 Contacts and Contributors
