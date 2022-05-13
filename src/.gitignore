@@ -1,0 +1,8 @@
+*.pyc
+*__pycache__
+*.o
+*.mod
+*.dat
+*.chkpt
+test
+pareto_pts.txt
