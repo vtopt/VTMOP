@@ -1,5 +1,5 @@
 =============================================================================
-ACM TOMS Algorithm XXXX: VMTOP: Blackbox Multiobjective Optimization Problems
+ACM TOMS Algorithm XXXX: VTMOP: Solver for Blackbox Multiobjective Optimization Problems
 =============================================================================
 
 VTMOP is a Fortran 2008 package containing a robust, portable solver and
@@ -11,7 +11,7 @@ can be run both serially and with parallel function evaluations.
 Minimal subsets of dependencies such as VTDIRECT, QNSTOP, SHEPPACK,
 DELAUNAYSPARSE, SLATEC, LAPACK, and BLAS are also provided. Comments at
 the top of each subroutine document their usage, and examples demonstrating
-the driver's usage are given in sample.f90.
+the driver's usage are given in ``src/sample.f90``.
 
 ------------------------------
 Source Code and Package Layout
@@ -108,9 +108,7 @@ whether it supports
  - passing internal procedures as actual arguments
  - usage of the ``IEEE_ARITHMETIC`` intrinsic module.
 
-.. include:: ./src/USERS
-
-.. include:: ./src/OBJ_FUNC_README
+.. include:: ./src/USERS.rst
 
 -------------------------
 Contacts and Contributors
