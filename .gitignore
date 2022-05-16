@@ -1,0 +1,8 @@
+*.o
+*.mod
+*.chkpt
+*.dat
+*/samples
+*/samplep
+*/samples_out.txt
+*/samplep_out.txt

@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="VTMOP" />
+<meta name="keywords" content="VTMOP, optimization, blackbox optimization,
+simulation optimization, multiobjective optimization,
+multicriteria optimization, mathematical software, numerical software,
+open source software, Fortran, ACM TOMS Algorithm" />
+<link rel="stylesheet" type="text/css" href="body.css" title="VTMOP" media="screen,projection" />
+<title>VTMOP</title>
+</head>
+
+<body>
+<div id="wrap">
+
+<div id="header">
+<p id="toplinks"></p>
+<h1>VTMOP</h1>
+<p id="slogan">
+VTMOP -- Solver for Blackbox Multiobjective Optimization Problems
+</p>
+</div>
+
+<div id="content">
+<h2>About the Software</h2>
+<p>
+    <strong><span class="green">VTMOP</span></strong> [1]
+    is a Fortran 2008 package containing a robust, portable solver and
+    a flexible framework for solving multiobjective optimization problems
+    (MOPs). Designed for efficiency and scalability to an arbitrary number of
+    objectives, VTMOP attempts to generate uniformly spaced points on a
+    (possibly nonconvex) Pareto front with minimal cost function evaluations
+    using the adaptive weighting scheme described in [2].
+    The driver subroutine is <code>VTMOP_SOLVE</code>, which
+    can be run both serially and with parallel function evaluations.
+    Minimal subsets of dependencies such as VTDIRECT, QNSTOP, SHEPPACK,
+    DELAUNAYSPARSE, SLATEC, LAPACK, and BLAS are also provided. Comments at
+    the top of each subroutine document their usage, and examples demonstrating
+    the driver's usage are given in the sample drivers
+    <code>samples.f90</code> and <code>samplep.f90</code>.
+</p>
+
+<p>
+    A Python interface for VTMOP is also available through the
+    <a target="_blank"
+       href=https://github.com/Libensemble/libe-community-examples>
+       libEnsemble
+   </a>
+   library [3,4], which can be used to dynamically coordinate the distribution
+   of simulation evaluations over extreme-scale resources.
+</p>
+
+<p>
+   VTMOP has been used to solve problems in the areas of HPC library
+   auto-tuning [5,6], particle accelerator optimization [1], and
+   cell biology [7].
+</p>
+
+<p class="readmore">
+    <a href="usergd.html">Read the User Guide</a> &raquo;
+</p>
+
+<h2>Publications</h2>
+<a href="http://doi.org/10.1145/3529258" id="r1"><p>
+[1] T. H. Chang, L. T. Watson, J. Larson, N. Neveu, W. I. Thacker,
+S. Deshpande, and T. C. H. Lux.
+"Algorithm XXXX: VTMOP: Solver for Blackbox Multiobjective Optimization
+Problems",
+<i>ACM Trans. Math. Software</i>, XX(X), Article XX (2022), 1-XX.
+<i>To appear</i>.
+</p></a>
+
+<a href="http://doi.org/10.1080/10556788.2015.1048861" id="r2"><p>
+[2] S. Deshpande, L. T. Watson, and R. A. Canfield.
+"Multiobjective optimization using an adaptive weighting scheme",
+<i>Optimization Methods and Software</i>, 31(1), (2016), 110-133.
+</p></a>
+
+<a href="http://doi.org/10.22360/springsim.2020.hpc.001" id="r3"><p>
+[3] T. H. Chang, J. Larson, L. T. Watson, and T. C. H. Lux.
+"Managing computationally expensive blackbox multiobjective optimization problems with libEnsemble",
+In <i>Proc. 2020 Spring Simulation Conference (SpringSim '20)</i>,
+Society for Modeling and Simulation International,
+virtual event, 2020,
+Article No. 31.
+</p></a>
+
+<a href="http://doi.org/10.1109/tpds.2021.3082815" id="r4"><p>
+[4] S. Hudson, J. Larson, J.-L. Navarro, and S. Wild.
+"libEnsemble: A library to coordinate the concurrent evaluation of
+dynamic ensembles of calculations",
+<i>IEEE Trans. Parallel and Distributed Systems</i>, 33(4), (2022), 977-988.
+</p></a>
+
+<a href="http://doi.org/10.1109/WSC48552.2020.9383875" id="r5"><p>
+[5] T. H. Chang, J. Larson, and L. T. Watson.
+"Multiobjective optimization of the variability of the high-performance Linpack
+solver",
+In <i>Proc. 2020 Winter Simulation Conference (WSC 2020)</i>,
+virtual event, 2020,
+pp. 3081-3092.
+</p></a>
+
+<a href="https://vtechworks.lib.vt.edu/handle/10919/98915" id="r6"><p>
+[6] T. H. Chang, "Mathematical Software for Multiobjective Optimization
+Problems".
+<i>Ph.D. thesis, Virginia Polytechnic Institute and State University,
+Blacksburg, VA, USA</i>, 2020.
+</p></a>
+
+<a href="http://doi.org/10.1371/journal.pcbi.1009847" id="r7"><p>
+[7] C. Xu, H. Hollis, M. Dai, X. Yao, L. T. Watson, Y. Cao, and M. Chen.
+"Modeling the temporal dynamics of master regulators and CtrA proteolysis in Caulobacter crescentus cell cycle",
+<i>PLOS Computational Biology</i>, 18(1), (2022), 1-25.
+</p></a>
+</div>
+
+<div id="sidebar">
+<h2>Navigate</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="usergd.html">User Guide</a></li>
+<li><a href="obj_func.html">Writing an Objective Function</a></li>
+<li><a href="vtmop_toms.zip">Download VTMOP TOMS src</a></li>
+<li><a href="vtmop_latest.zip">Download VTMOP latest src</a></li>
+</ul>
+<h2>Inqueries</h2>
+<p>
+Tyler Chang<br>
+Argonne National Lab<br>
+Lemont, IL 60439<br>
+<code>tchang at anl dot gov</code><br>
+</p>
+<p>
+Layne Watson<br>
+Virginia Tech<br>
+Blacksburg, VA 24061<br>
+<code>ltw at cs dot vt dot edu</code><br>
+<code>ltw at ieee dot org</code>
+</p>
+</div>
+
+<div id="footer">
+    <p> <b>Last Modified:</b> 05/16/2022 </p>
+    <p>&copy; 2022 <a href="#">VTMOP</a></p>
+</div>
+
+</div>
+</body>
+</html>
