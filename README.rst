@@ -169,11 +169,13 @@ publication:
 
 .. code-block:: bibtex
 
-    @misc{chang2022algorithm,
+    @article{chang2022algorithm,
       author={Chang, Tyler H. and Watson, Layne T. and Larson, Jeffrey and Thacker, William I. and Deshpande, Shubhangi and Lux, Thomas C. H.},
+      year={2022},
       title={Algorithm {XXXX}: {VTMOP}: {S}olver for blackbox multiobjective optimization problems},
-      note = {To appear in ACM Transactions on Mathematical Software,
-      \url{https://doi.org/10.1145/3529258}}
+      journal={ACM Transactions on Mathematical Software},
+      note = {To appear},
+      doi={10.1145/3529258}
     }
 
 -------------------------
@@ -181,7 +183,7 @@ Contacts and Contributors
 -------------------------
 
 For further inquiries, contact
- - Tyler Chang, ``tchang@anl.gov`` or
+ - Tyler Chang, ``tchang@anl.gov``
  - Layne Watson, ``ltw@cs.vt.edu``
 
 For a full list of contributors, including contributions to the
