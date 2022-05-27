@@ -170,7 +170,7 @@ publication:
 .. code-block:: bibtex
 
     @article{chang2022algorithm,
-      author={Chang, Tyler H. and Watson, Layne T. and Larson, Jeffrey and Thacker, William I. and Deshpande, Shubhangi and Lux, Thomas C. H.},
+      author={Chang, Tyler H. and Watson, Layne T. and Larson, Jeffrey and Neveu, Nicole and Thacker, William I. and Deshpande, Shubhangi and Lux, Thomas C. H.},
       year={2022},
       title={Algorithm {XXXX}: {VTMOP}: {S}olver for blackbox multiobjective optimization problems},
       journal={ACM Transactions on Mathematical Software},
