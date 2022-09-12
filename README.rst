@@ -1,5 +1,5 @@
 =============================================================================
-ACM TOMS Algorithm XXXX: VTMOP: Solver for Blackbox Multiobjective Optimization Problems
+ACM TOMS Algorithm 1028: VTMOP: Solver for Blackbox Multiobjective Optimization Problems
 =============================================================================
 
 VTMOP is a Fortran 2008 package containing a robust, portable solver and
@@ -70,7 +70,7 @@ Source Code and Package Layout
 ------------------------------
 
 The directory ``src`` contains all source code and documentation,
-exactly as it appeared in *ACM TOMS Algorithm XXXX*.
+exactly as it appeared in *ACM TOMS Algorithm 1028*.
 
 The physical organization of the ``src`` directory is as follows:
 
@@ -172,9 +172,12 @@ publication:
     @article{chang2022algorithm,
       author={Chang, Tyler H. and Watson, Layne T. and Larson, Jeffrey and Neveu, Nicole and Thacker, William I. and Deshpande, Shubhangi and Lux, Thomas C. H.},
       year={2022},
-      title={Algorithm {XXXX}: {VTMOP}: {S}olver for blackbox multiobjective optimization problems},
+      title={Algorithm {1028}: {VTMOP}: {S}olver for blackbox multiobjective optimization problems},
       journal={ACM Transactions on Mathematical Software},
-      note = {To appear},
+      volume={48},
+      number={3},
+      articleno={36},
+      pages={1-34},
       doi={10.1145/3529258}
     }
 
